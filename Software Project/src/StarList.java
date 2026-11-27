@@ -50,7 +50,10 @@ public class StarList extends UnicastRemoteObject implements StarListInterface, 
       }
 
    }
+   
+   //Could do with a create if not exist function for serialisation
 
+   //Serialise the list, do nothing if its empty, otherwise just write it
    public void saveList() throws IOException, ClassNotFoundException {
       System.out.println("Saving stars.");
       if (this.list.size() != 0) {
@@ -66,9 +69,9 @@ public class StarList extends UnicastRemoteObject implements StarListInterface, 
       }
    }
 
+   //Deserialise the list, make sure to case the object to what you expect
    public void loadList() throws IOException, ClassNotFoundException {
       System.out.println("Loading stars.");
-
       try {
          FileInputStream fileIn = new FileInputStream("stars.ser");
          ObjectInputStream objectIn = new ObjectInputStream(fileIn);
