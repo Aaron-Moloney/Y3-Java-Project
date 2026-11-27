@@ -7,9 +7,11 @@ public class Server {
 
    public static void main(String[] args) throws Exception {
       list = new StarList();
-      list.addStar((double)1.0F);
-      list.addStar((double)8.0F);
-      list.addStar((double)5.0F);
+      
+      //Defaults so you don't load a blank page
+//      list.addStar((double)1.0F);
+//      list.addStar((double)8.0F);
+//      list.addStar((double)5.0F);
 
       try {
          Registry r = LocateRegistry.createRegistry(1234);

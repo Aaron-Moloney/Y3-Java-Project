@@ -3,7 +3,9 @@ import java.io.Serializable;
 import java.rmi.RemoteException;
 import java.rmi.server.UnicastRemoteObject;
 
-public abstract class Star extends UnicastRemoteObject implements StarInterface, Serializable {
+//Base class for star types, extends remoteObject to allow the client to use it
+//Some logic in the radius setter is to check if you make a black hole
+public abstract class Star extends UnicastRemoteObject implements StarInterface{
    String name = "";
    Color color;
    double mass;
@@ -27,6 +29,8 @@ public abstract class Star extends UnicastRemoteObject implements StarInterface,
    }
 
    public void setRadius(double radius) {
+	   //4.24465... was orignially a double division operation to get the Schwarzschild Radius (2953.0 / 695700000.0),
+	   //Decompilation has caused it to be this instead
       if (!this.blackHole && !(radius <= 4.244645680609458E-5 * this.mass)) {
          this.radius = radius;
       } else {
@@ -51,6 +55,7 @@ public abstract class Star extends UnicastRemoteObject implements StarInterface,
 
    public void setName(String n) {
       if (this.blackHole) {
+    	  //Black Holes are immutable, though they actually dissolve over time
          this.name = "Black Hole";
       } else {
          this.name = n;

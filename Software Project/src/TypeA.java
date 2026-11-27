@@ -2,6 +2,7 @@ import java.awt.Color;
 import java.rmi.RemoteException;
 
 public class TypeA extends Star {
+	//Set Params based on typical values and colour that the star shines at
    TypeA() throws RemoteException {
       this.color = new Color(218, 224, 253);
       this.mass = 1.4;
@@ -9,6 +10,7 @@ public class TypeA extends Star {
       this.name = "Type A";
    }
 
+   //Incomplete method, no facts
    public String quickFact() {
       return "Fact here";
    }

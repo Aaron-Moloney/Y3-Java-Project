@@ -7,12 +7,14 @@ public class Client {
 
    public static void main(String[] args) throws Exception {
       try {
+    	  //Connect then get the list, must cast it to our interface
          Registry r = LocateRegistry.getRegistry("localhost", 1234);
          listInterface = (StarListInterface)r.lookup("ListOfStars");
       } catch (RemoteException e) {
          e.printStackTrace();
       }
 
+      //Make a new gui and pass in the list
       new ProjectGUI(listInterface);
    }
 }

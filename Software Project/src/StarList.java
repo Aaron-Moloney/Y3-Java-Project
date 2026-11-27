@@ -15,6 +15,7 @@ public class StarList extends UnicastRemoteObject implements StarListInterface, 
    public StarList() throws RemoteException {
    }
 
+   //Uses the factory to add a new Star of the type returned by the factory
    public boolean addStar(double s) {
       try {
          this.list.add(StellarFactory.getBody(s));
@@ -29,15 +30,20 @@ public class StarList extends UnicastRemoteObject implements StarListInterface, 
       return this.list;
    }
 
+   //Remove based on position
    public void removeStar(int i) {
       this.list.remove(i);
    }
 
-   public void removeStar(String i) {
-      System.out.println("here");
+   //Remove based on name, radius and mass
+   //Iterate until found
+   public void removeStar(String i, double var2, double var3) {
+//      System.out.println("here");
 
       for(int j = 0; j < this.list.size(); ++j) {
-         if (((Star)this.list.get(j)).getName().equals(i)) {
+         if (((Star)this.list.get(j)).getName().equals(i) &&
+        		 this.list.get(j).getRadius() == var2 &&
+		 this.list.get(j).getMass() == var3) {
             this.list.remove(j);
             break;
          }

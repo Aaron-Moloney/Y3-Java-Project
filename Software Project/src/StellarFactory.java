@@ -1,5 +1,6 @@
 import java.rmi.RemoteException;
 
+//Returns the appropriate star based on given mass
 public class StellarFactory {
    public static Star getBody(double mass) throws RemoteException {
       if (mass >= (double)16.0F) {
@@ -15,7 +16,7 @@ public class StellarFactory {
       } else if (mass >= 0.45) {
          return new TypeK();
       } else {
-         return mass >= 0.08 ? new TypeM() : null;
+         return new TypeM();
       }
    }
 }
