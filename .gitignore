@@ -1,0 +1,67 @@
+# Eclipse IDE (Personal Workspace)
+.metadata
+/NewsAgentDeliverySystemSE/.classpath
+
+# Compiled Output
+bin/
+out/
+build/
+dist/
+*.class
+
+
+# Java Crash Logs
+hs_err_pid*.log
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Visual Studio Code
+.vscode/
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# NetBeans
+nbproject/private/
+nbbuild/
+nbdist/
+
+# Windows
+Thumbs.db
+desktop.ini
+
+# MacOS
+.DS_Store
+
+# Linux Backup Files
+*~
+
+# Database: Not ignored for now so that it is still shared with everyone. 
+
+# Why you might ignore it: The database file changes every time anyone runs the program and adds, 
+# edits, and/or deletes data. Git isn't able to merge two people's versions of it, so if two of 
+# us were to change it, one person's changes would be lost. Only remove the "#" (hashtag) at the 
+# start/beginning of the last line in this file if all members of the team agree to ignore it. 
+
+# Extra Step Needed: The database file is already uploaded (tracked) by Git, and Git keeps tracking 
+# files it already tracks, even if they are ignored. So after removing the "#" (hashtag), someone/you 
+# will also need to run this command once from the top folder of the repository (right click in GitHub 
+# Desktop on the repository name and select "Open in Command Prompt" / "Open in PowerShell" / "Open In Terminal"):
+# 
+# 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 (Command) 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 🠇 
+# git rm --cached "NewsAgentDeliverySystemSE/database/NewsAgentDB.db"
+# 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 (Command) 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅 🠅
+
+# "--cached" means the file is only removed from Git's records/tracking, and NOT deleted from the PC of 
+# the person running the command. That person then commits and pushes.
+
+# ----------> WARNING: <----------
+# When everyone else pulls that commit, Git WILL delete their local copy of the database file.
+# Everyone should back up (copy) their local NewsAgentDB.db file to a safe location somewhere outside of 
+# the repository before pulling, then copy it back afterwards. 
+
+NewsAgentDeliverySystemSE/database/*.db
